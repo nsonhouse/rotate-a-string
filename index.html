@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rotate a string</title>
+</head>
+<body>   
+    
+    <div id="button"><button>ROTATE</button></div>
+    <br>    
+    <div id="str-area"></div>
+    <br>    
+    <div id="output"> </div>  
+
+    <script>
+
+        let str = "rotatedString";
+        document.getElementById("str-area").innerHTML = str;
+        document.getElementById("output").innerHTML = str;
+        document.getElementById("button").addEventListener("click", rotate);
+
+        function rotate() {
+            let str = document.getElementById("output").textContent;
+            let tail = str.slice(str.length-1); 
+            let tmpStr = str.slice(0, str.length-1);
+            str = tail +tmpStr;
+            document.getElementById("output").innerHTML = str;  
+        }    
+    </script>
+       
+</body>
+</html>
